@@ -1,0 +1,398 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+      }
+
+      /* header */
+      .header {
+        background-color: #ffffff;
+        border-bottom: 2px solid #0d1b4b;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header img {
+        width: 55px;
+      }
+
+      .header-esquerda {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .header-esquerda strong {
+        color: #0d1b4b;
+        font-size: 17px;
+      }
+
+      .avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #0d1b4b;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      .header-direita {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* layout geral */
+      .layout {
+        display: flex;
+        height: calc(100vh - 62px);
+      }
+
+      /* menu lateral */
+      .menu {
+        width: 190px;
+        background-color: #ffffff;
+        border-right: 1px solid #ddd;
+        padding: 16px 10px;
+      }
+
+      .menu p {
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #0d1b4b;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .menu hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+
+      .item-menu {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 4px;
+        border: 1px solid transparent;
+      }
+
+      .item-menu:hover {
+        background-color: #f0f2f5;
+        border-color: #ddd;
+      }
+
+      .item-menu.ativo {
+        background-color: #0d1b4b;
+        color: white;
+      }
+
+      /* conteudo principal */
+      .conteudo {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      .titulo-pagina {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 18px;
+      }
+
+      .titulo-pagina span {
+        color: #0d1b4b;
+        font-weight: bold;
+      }
+
+      /* cards de numeros */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-left: 4px solid #0d1b4b;
+        border-radius: 6px;
+        padding: 16px;
+      }
+
+      .card p {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+
+      .card h2 {
+        font-size: 26px;
+        color: #0d1b4b;
+      }
+
+      .card small {
+        font-size: 11px;
+        color: #aaa;
+      }
+
+      /* paineis */
+      .paineis {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .painel {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 16px;
+      }
+
+      .painel h3 {
+        font-size: 14px;
+        color: #0d1b4b;
+        margin-bottom: 6px;
+      }
+
+      .painel hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin-bottom: 12px;
+      }
+
+      /* tabela */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      table th {
+        text-align: left;
+        padding: 8px;
+        background-color: #f5f7fa;
+        color: #555;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table td {
+        padding: 8px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #444;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .badge.verde {
+        background-color: #e6f4ea;
+        color: #2e7d32;
+      }
+      .badge.vermelho {
+        background-color: #fdecea;
+        color: #c62828;
+      }
+
+      /* agendamentos */
+      .ag-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 13px;
+      }
+
+      .ag-item:last-child {
+        border-bottom: none;
+      }
+
+      .ag-data {
+        background-color: #0d1b4b;
+        color: white;
+        border-radius: 4px;
+        padding: 5px 8px;
+        text-align: center;
+        min-width: 44px;
+      }
+
+      .ag-data strong {
+        display: block;
+        font-size: 16px;
+      }
+      .ag-data small {
+        font-size: 10px;
+      }
+
+      .ag-info strong {
+        display: block;
+        color: #0d1b4b;
+        font-size: 13px;
+      }
+      .ag-info small {
+        color: #888;
+      }
+
+      .ag-hora {
+        margin-left: auto;
+        font-size: 12px;
+        color: #888;
+      }
+
+      /* avisos */
+      .aviso-item {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 13px;
+      }
+
+      .aviso-item:last-child {
+        border-bottom: none;
+      }
+      .aviso-item strong {
+        display: block;
+        color: #333;
+      }
+      .aviso-item small {
+        color: #aaa;
+      }
+
+      /* paginas escondidas */
+      .pagina {
+        display: none;
+      }
+      .pagina.ativa {
+        display: block;
+      }
+
+      /* modulo atendimento */
+      .atend-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .form-group {
+        margin-bottom: 12px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 4px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: Arial, sans-serif;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #0d1b4b;
+      }
+
+      .form-group textarea {
+        height: 90px;
+        resize: vertical;
+      }
+
+      .btn-azul {
+        width: 100%;
+        padding: 10px;
+        background-color: #0d1b4b;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 4px;
+      }
+
+      .btn-azul:hover {
+        background-color: #132269;
+      }
+
+      .btn-cinza {
+        width: 100%;
+        padding: 10px;
+        background-color: #f0f2f5;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 4px;
+      }
+
+      .btn-cinza:hover {
+        background-color: #e0e3ea;
+      }
+
+      .msg-ok {
+        color: green;
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 8px;
+      }
+      .msg-erro {
+        color: red;
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 8px;
+      }
+
+      .hist-item {
+        padding: 7px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 13px;
+      }
+      .hist-item:last-child {
+        border-bottom: none;
+      }
+      .hist-item strong {
+        color: #0d1b4b;
+        display: block;
+      }
+      .hist-item small {
+        color: #aaa;
+      }

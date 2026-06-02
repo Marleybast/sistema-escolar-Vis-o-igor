@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+/* header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #0d1b4b;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  width: 55px;
+}
+
+.header-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-esquerda strong {
+  color: #0d1b4b;
+  font-size: 17px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #0d1b4b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.header-direita {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* layout geral */
+.layout {
+  display: flex;
+  height: calc(100vh - 62px);
+}
+
+/* menu lateral */
+.menu {
+  width: 190px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding: 16px 10px;
+}
+
+.menu p {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #0d1b4b;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.menu hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.item-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+}
+
+.item-menu:hover {
+  background-color: #f0f2f5;
+  border-color: #ddd;
+}
+
+.item-menu.ativo {
+  background-color: #0d1b4b;
+  color: white;
+}
+
+/* conteudo principal */
+.conteudo {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.titulo-pagina {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+.titulo-pagina span {
+  color: #0d1b4b;
+  font-weight: bold;
+}
+
+/* painel */
+.painel {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.painel h3 {
+  font-size: 14px;
+  color: #0d1b4b;
+  margin-bottom: 6px;
+}
+
+.painel hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin-bottom: 16px;
+}
+
+/* formulario em grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0d1b4b;
+}
+
+/* botoes */
+.botoes {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-azul {
+  padding: 10px 24px;
+  background-color: #0d1b4b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-azul:hover {
+  background-color: #132269;
+}
+
+.btn-cinza {
+  padding: 10px 24px;
+  background-color: #f0f2f5;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-cinza:hover {
+  background-color: #e0e3ea;
+}
+
+/* mensagem */
+#mensagem {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.msg-ok {
+  color: green;
+}
+.msg-erro {
+  color: red;
+}
+
+/* tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+table th {
+  text-align: left;
+  padding: 8px;
+  background-color: #f5f7fa;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+table td {
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #444;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.badge.verde {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+}
+.badge.vermelho {
+  background-color: #fdecea;
+  color: #c62828;
+}

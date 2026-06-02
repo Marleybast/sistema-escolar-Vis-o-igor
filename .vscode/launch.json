@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Abrir API Alunos Recentes",
+      "url": "http://localhost:3000/api/alunos/recentes",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Abrir API Usuários",
+      "url": "http://localhost:3000/usuarios",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

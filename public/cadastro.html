@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colegio Visao - Cadastro de Aluno</title>
+    <link rel="stylesheet" href="cadastro.css" />
+  </head>
+  <body>
+    <!-- cabeçalho igual ao dashboard -->
+    <div class="header">
+      <div class="header-esquerda">
+        <img src="logo.png" alt="Logo Colegio Visao" />
+        <strong>Colégio Visão</strong>
+      </div>
+      <div class="header-direita">
+        <span>Bem-vindo, <strong>Admin</strong></span>
+        <div class="avatar">FT</div>
+      </div>
+    </div>
+
+    <!-- layout com menu e conteudo -->
+    <div class="layout">
+      <!-- menu lateral -->
+      <div class="menu">
+        <p>Menu</p>
+        <hr />
+        <div
+          class="item-menu"
+          onclick="window.location.href = 'dashboard.html'"
+        >
+          🏠 Home
+        </div>
+        <div class="item-menu ativo">👤 Alunos</div>
+        <div
+          class="item-menu"
+          onclick="window.location.href = 'dashboard.html'"
+        >
+          📚 Cursos
+        </div>
+        <div
+          class="item-menu"
+          onclick="window.location.href = 'dashboard.html'"
+        >
+          📋 Matrículas
+        </div>
+        <div
+          class="item-menu"
+          onclick="window.location.href = 'dashboard.html'"
+        >
+          📞 Atendimento
+        </div>
+      </div>
+
+      <!-- conteudo principal -->
+      <div class="conteudo">
+        <div class="titulo-pagina">
+          Sistema › Alunos › <span>Cadastro de Aluno</span>
+        </div>
+
+        <div class="painel">
+          <h3>Novo Aluno</h3>
+          <hr />
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nome completo:</label>
+              <input
+                type="text"
+                id="nome"
+                placeholder="Digite o nome do aluno"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>E-mail:</label>
+              <input type="email" id="email" placeholder="Digite o e-mail" />
+            </div>
+
+            <div class="form-group">
+              <label>CPF:</label>
+              <input
+                type="text"
+                id="cpf"
+                placeholder="000.000.000-00"
+                maxlength="14"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Data de Nascimento:</label>
+              <input type="date" id="nascimento" />
+            </div>
+
+            <div class="form-group">
+              <label>Curso:</label>
+              <select id="curso">
+                <option value="">Selecione...</option>
+                <option>Informatica</option>
+                <option>Administracao</option>
+                <option>Contabilidade</option>
+                <option>Marketing</option>
+                <option>Recursos Humanos</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Turma:</label>
+              <select id="turma">
+                <option value="">Selecione...</option>
+                <option>1A</option>
+                <option>1B</option>
+                <option>1C</option>
+                <option>2A</option>
+                <option>2B</option>
+                <option>3A</option>
+                <option>3B</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Telefone:</label>
+              <input
+                type="text"
+                id="telefone"
+                placeholder="(00) 00000-0000"
+                maxlength="15"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Status:</label>
+              <select id="status">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="botoes">
+            <button
+              class="btn-cinza"
+              onclick="window.location.href = 'dashboard.html'"
+            >
+              Cancelar
+            </button>
+            <button class="btn-azul" onclick="cadastrar()">Salvar Aluno</button>
+          </div>
+
+          <p id="mensagem"></p>
+        </div>
+
+        <!-- tabela de alunos cadastrados -->
+        <div class="painel" style="margin-top: 16px">
+          <h3>Alunos Cadastrados</h3>
+          <hr />
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Turma</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-alunos">
+              <tr>
+                <td>Ana Lima</td>
+                <td>Informatica</td>
+                <td>2A</td>
+                <td><span class="badge verde">Ativo</span></td>
+              </tr>
+              <tr>
+                <td>Carlos Souza</td>
+                <td>Administracao</td>
+                <td>3B</td>
+                <td><span class="badge verde">Ativo</span></td>
+              </tr>
+              <tr>
+                <td>Julia Mendes</td>
+                <td>Contabilidade</td>
+                <td>1A</td>
+                <td><span class="badge vermelho">Inativo</span></td>
+              </tr>
+              <tr>
+                <td>Pedro Alves</td>
+                <td>Informatica</td>
+                <td>2B</td>
+                <td><span class="badge verde">Ativo</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colegio Visao - Sistema</title>
+    <link rel="stylesheet" href="dashboard.css">
+    </head>
+  
+    <!-- cabeçalho -->
+    <div class="header">  
+      <div class="header-esquerda">
+        <img src="logo.png" alt="Logo Colegio Visao" />
+        <strong>Colégio Visão</strong>
+      </div>
+      <div class="header-direita">
+        <span>Bem-vindo, <strong>Admin</strong></span>
+        <div class="avatar">FT</div>
+      </div>
+    </div>
+
+    <!-- layout com menu e conteudo -->
+    <div class="layout">
+      <!-- menu lateral -->
+      <div class="menu">
+        <p>Menu</p>
+        <hr />
+        <div class="item-menu ativo" onclick="mudarPagina('home', this)">
+          🏠 Home
+        </div>
+        <div class="item-menu" onclick="mudarPagina('alunos', this)">
+          👤 Alunos
+        </div>
+        <div class="item-menu" onclick="mudarPagina('cursos', this)">
+          📚 Cursos
+        </div>
+        <div class="item-menu" onclick="mudarPagina('matriculas', this)">
+          📋 Matrículas
+        </div>
+        <div class="item-menu" onclick="mudarPagina('atendimento', this)">
+          📞 Atendimento
+        </div>
+      </div>
+
+      <!-- area do conteudo -->
+      <div class="conteudo">
+        <!-- pagina home -->
+        <div id="pagina-home" class="pagina ativa">
+          <div class="titulo-pagina">Sistema › <span>Home</span></div>
+
+          <div class="cards">
+            <div class="card">
+              <p>Total de Alunos</p>
+              <h2>342</h2>
+              <small>ativos este semestre</small>
+            </div>
+            <div class="card">
+              <p>Cursos Ativos</p>
+              <h2>12</h2>
+              <small>em andamento</small>
+            </div>
+            <div class="card">
+              <p>Matrículas</p>
+              <h2>89</h2>
+              <small>neste mes</small>
+            </div>
+            <div class="card">
+              <p>Atendimentos</p>
+              <h2>27</h2>
+              <small>agendados hoje</small>
+            </div>
+          </div>
+
+          <div class="paineis">
+            <div class="painel">
+              <h3>Alunos Recentes</h3>
+              <hr />
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ana Lima</td>
+                    <td>Informatica</td>
+                    <td><span class="badge verde">Ativo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Carlos Souza</td>
+                    <td>Administracao</td>
+                    <td><span class="badge verde">Ativo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Julia Mendes</td>
+                    <td>Contabilidade</td>
+                    <td><span class="badge vermelho">Inativo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Pedro Alves</td>
+                    <td>Informatica</td>
+                    <td><span class="badge verde">Ativo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Fernanda Costa</td>
+                    <td>Marketing</td>
+                    <td><span class="badge verde">Ativo</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="painel">
+              <h3>Proximos Agendamentos</h3>
+              <hr />
+              <div class="ag-item">
+                <div class="ag-data"><strong>17</strong><small>Mai</small></div>
+                <div class="ag-info">
+                  <strong>Reuniao - Ana Lima</strong><small>Secretaria</small>
+                </div>
+                <div class="ag-hora">09:00</div>
+              </div>
+              <div class="ag-item">
+                <div class="ag-data"><strong>17</strong><small>Mai</small></div>
+                <div class="ag-info">
+                  <strong>Docs - Carlos Souza</strong><small>Financeiro</small>
+                </div>
+                <div class="ag-hora">10:30</div>
+              </div>
+              <div class="ag-item">
+                <div class="ag-data"><strong>18</strong><small>Mai</small></div>
+                <div class="ag-info">
+                  <strong>Matricula - Julia Mendes</strong
+                  ><small>Administrativo</small>
+                </div>
+                <div class="ag-hora">14:00</div>
+              </div>
+            </div>
+
+            <div class="painel">
+              <h3>Avisos</h3>
+              <hr />
+              <div class="aviso-item">
+                <strong>Prazo de matriculas encerrando</strong>
+                <small>Encerramento dia 31/05/2026</small>
+              </div>
+              <div class="aviso-item">
+                <strong>Reuniao pedagogica</strong>
+                <small>Dia 20/05 as 15h - Sala de reunioes</small>
+              </div>
+              <div class="aviso-item">
+                <strong>Manutencao do sistema</strong>
+                <small>Prevista para 25/05 - das 22h as 00h</small>
+              </div>
+            </div>
+
+            <div class="painel">
+              <h3>Mensagens Recentes</h3>
+              <hr />
+              <div class="aviso-item">
+                <strong>Ana Lima</strong>
+                <small>Preciso remarcar meu atendimento de amanha...</small>
+              </div>
+              <div class="aviso-item">
+                <strong>Carlos Souza</strong>
+                <small>Quando sai o resultado da matricula?</small>
+              </div>
+              <div class="aviso-item">
+                <strong>Julia Mendes</strong>
+                <small>Os documentos ja foram enviados por email.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- pagina alunos -->
+        <div id="pagina-alunos" class="pagina">
+          <div class="titulo-pagina">Sistema › <span>Alunos</span></div>
+          <div class="painel">
+            <h3>Lista de Alunos</h3>
+            <hr />
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Curso</th>
+                  <th>Turma</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ana Lima</td>
+                  <td>Informatica</td>
+                  <td>2A</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Carlos Souza</td>
+                  <td>Administracao</td>
+                  <td>3B</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Julia Mendes</td>
+                  <td>Contabilidade</td>
+                  <td>1A</td>
+                  <td><span class="badge vermelho">Inativo</span></td>
+                </tr>
+                <tr>
+                  <td>Pedro Alves</td>
+                  <td>Informatica</td>
+                  <td>2B</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Fernanda Costa</td>
+                  <td>Marketing</td>
+                  <td>1C</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Lucas Ferreira</td>
+                  <td>Administracao</td>
+                  <td>2A</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Beatriz Santos</td>
+                  <td>Marketing</td>
+                  <td>3A</td>
+                  <td><span class="badge vermelho">Inativo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- pagina cursos -->
+        <div id="pagina-cursos" class="pagina">
+          <div class="titulo-pagina">Sistema › <span>Cursos</span></div>
+          <div class="painel">
+            <h3>Cursos Disponiveis</h3>
+            <hr />
+            <table>
+              <thead>
+                <tr>
+                  <th>Curso</th>
+                  <th>Duracao</th>
+                  <th>Alunos</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Informatica</td>
+                  <td>2 anos</td>
+                  <td>98</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Administracao</td>
+                  <td>3 anos</td>
+                  <td>74</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Contabilidade</td>
+                  <td>3 anos</td>
+                  <td>61</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Marketing</td>
+                  <td>2 anos</td>
+                  <td>55</td>
+                  <td><span class="badge verde">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>Recursos Humanos</td>
+                  <td>2 anos</td>
+                  <td>54</td>
+                  <td><span class="badge vermelho">Inativo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- pagina matriculas -->
+        <div id="pagina-matriculas" class="pagina">
+          <div class="titulo-pagina">Sistema › <span>Matrículas</span></div>
+          <div class="painel">
+            <h3>Matriculas Recentes</h3>
+            <hr />
+            <table>
+              <thead>
+                <tr>
+                  <th>Aluno</th>
+                  <th>Curso</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ana Lima</td>
+                  <td>Informatica</td>
+                  <td>10/05/2026</td>
+                  <td><span class="badge verde">Confirmada</span></td>
+                </tr>
+                <tr>
+                  <td>Lucas Ferreira</td>
+                  <td>Administracao</td>
+                  <td>12/05/2026</td>
+                  <td><span class="badge verde">Confirmada</span></td>
+                </tr>
+                <tr>
+                  <td>Beatriz Santos</td>
+                  <td>Marketing</td>
+                  <td>14/05/2026</td>
+                  <td><span class="badge vermelho">Pendente</span></td>
+                </tr>
+                <tr>
+                  <td>Rafael Nunes</td>
+                  <td>Contabilidade</td>
+                  <td>15/05/2026</td>
+                  <td><span class="badge verde">Confirmada</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- pagina atendimento -->
+        <div id="pagina-atendimento" class="pagina">
+          <div class="titulo-pagina">
+            Sistema › <span>Modulo de Atendimento</span>
+          </div>
+
+          <div class="atend-grid">
+            <div class="painel">
+              <h3>Agendamento</h3>
+              <hr />
+              <div class="form-group">
+                <label>Aluno:</label>
+                <select id="ag-aluno">
+                  <option value="">Selecione...</option>
+                  <option>Ana Lima</option>
+                  <option>Carlos Souza</option>
+                  <option>Julia Mendes</option>
+                  <option>Pedro Alves</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Data:</label>
+                <input type="date" id="ag-data" />
+              </div>
+              <div class="form-group">
+                <label>Hora:</label>
+                <input type="time" id="ag-hora" />
+              </div>
+              <button class="btn-azul" onclick="agendar()">Agendar</button>
+              <p id="msg-agendar"></p>
+            </div>
+
+            <div class="painel">
+              <h3>Simulacao de Mensagem</h3>
+              <hr />
+              <div class="form-group">
+                <label>Destinatario:</label>
+                <select id="msg-dest">
+                  <option value="">Selecione...</option>
+                  <option>Ana Lima</option>
+                  <option>Carlos Souza</option>
+                  <option>Todos os Alunos</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Mensagem:</label>
+                <textarea
+                  id="msg-texto"
+                  placeholder="Digite a mensagem..."
+                ></textarea>
+              </div>
+              <button class="btn-cinza" onclick="simularEnvio()">
+                Simular Envio
+              </button>
+              <p id="msg-retorno"></p>
+
+              <div style="margin-top: 16px">
+                <strong style="font-size: 13px; color: #0d1b4b"
+                  >Historico:</strong
+                >
+                <div id="historico" style="margin-top: 8px">
+                  <div class="hist-item">
+                    <strong>Para: Todos os Alunos</strong>
+                    <small
+                      >"Lembrete: reuniao amanha as 9h." — 16/05/2026</small
+                    >
+                  </div>
+                  <div class="hist-item">
+                    <strong>Para: Ana Lima</strong>
+                    <small>"Sua matricula foi confirmada." — 15/05/2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <script src="dashboard.js"></script>
+  </body>
+</html>
