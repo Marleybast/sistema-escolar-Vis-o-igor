@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colégio Visão — Sistema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-esquerda">
+      <img src="logo.png" alt="Logo Colégio Visão">
+      <div class="header-titulo">
+        <strong>Colégio Visão</strong>
+        <span>Sistema de Gestão</span>
+      </div>
+    </div>
+    <div class="header-direita">
+      <div class="header-info">
+        <span class="header-nome">Administrador</span>
+        <span class="header-perfil">Gestor do Sistema</span>
+      </div>
+      <div class="avatar">FT</div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="menu">
+      <p class="menu-titulo">Menu</p>
+      <hr>
+      <div class="item-menu ativo" onclick="mudarPagina('home', this)">
+        <span class="menu-icon">🏠</span> Home
+      </div>
+      <div class="item-menu" onclick="mudarPagina('alunos', this)">
+        <span class="menu-icon">👤</span> Alunos
+      </div>
+      <div class="item-menu" onclick="mudarPagina('cursos', this)">
+        <span class="menu-icon">📚</span> Cursos
+      </div>
+      <div class="item-menu" onclick="mudarPagina('matriculas', this)">
+        <span class="menu-icon">📋</span> Matrículas
+      </div>
+      <div class="item-menu" onclick="mudarPagina('atendimento', this)">
+        <span class="menu-icon">📞</span> Atendimento
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="conteudo">
+
+      <!-- HOME -->
+      <div id="pagina-home" class="pagina ativa">
+        <div class="titulo-pagina">Sistema › <span>Home</span></div>
+
+        <div class="cards">
+          <div class="card card-azul">
+            <div class="card-icon">👥</div>
+            <div class="card-info">
+              <p>Total de Alunos</p>
+              <h2 id="card-total-alunos">—</h2>
+              <small>ativos este semestre</small>
+            </div>
+          </div>
+          <div class="card card-verde">
+            <div class="card-icon">📚</div>
+            <div class="card-info">
+              <p>Cursos Ativos</p>
+              <h2 id="card-total-cursos">—</h2>
+              <small>em andamento</small>
+            </div>
+          </div>
+          <div class="card card-laranja">
+            <div class="card-icon">📋</div>
+            <div class="card-info">
+              <p>Matrículas</p>
+              <h2 id="card-total-matriculas">—</h2>
+              <small>neste mês</small>
+            </div>
+          </div>
+          <div class="card card-roxo">
+            <div class="card-icon">📞</div>
+            <div class="card-info">
+              <p>Atendimentos</p>
+              <h2 id="card-total-atendimentos">—</h2>
+              <small>agendados hoje</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="paineis">
+          <div class="painel">
+            <div class="painel-header">
+              <h3>Alunos Recentes</h3>
+              <button class="btn-link" onclick="mudarPagina('alunos', document.querySelectorAll('.item-menu')[1])">Ver todos →</button>
+            </div>
+            <hr>
+            <table>
+              <thead>
+                <tr><th>Nome</th><th>Curso</th><th>Status</th></tr>
+              </thead>
+              <tbody id="tbody-home-alunos">
+                <tr><td colspan="3" class="vazio">Carregando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="painel">
+            <div class="painel-header">
+              <h3>Próximos Agendamentos</h3>
+            </div>
+            <hr>
+            <div id="proximos-agendamentos">
+              <p class="vazio">Carregando...</p>
+            </div>
+          </div>
+
+          <div class="painel">
+            <div class="painel-header"><h3>Avisos do Sistema</h3></div>
+            <hr>
+            <div id="lista-avisos">
+              <p class="vazio">Nenhum aviso no momento.</p>
+            </div>
+          </div>
+
+          <div class="painel">
+            <div class="painel-header"><h3>Mensagens Recentes</h3></div>
+            <hr>
+            <div id="lista-mensagens">
+              <p class="vazio">Nenhuma mensagem recente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALUNOS -->
+      <div id="pagina-alunos" class="pagina">
+        <div class="titulo-pagina">Sistema › <span>Alunos</span></div>
+        <div class="painel">
+          <div class="painel-header">
+            <h3>Lista de Alunos</h3>
+            <button class="btn-primario-sm" onclick="window.location.href='cadastro.html'">+ Novo Aluno</button>
+          </div>
+          <hr>
+          <table>
+            <thead><tr><th>Nome</th><th>Curso</th><th>Turma</th><th>Status</th></tr></thead>
+            <tbody id="tbody-alunos">
+              <tr><td colspan="4" class="vazio">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CURSOS -->
+      <div id="pagina-cursos" class="pagina">
+        <div class="titulo-pagina">Sistema › <span>Cursos</span></div>
+        <div class="painel">
+          <div class="painel-header"><h3>Cursos Disponíveis</h3></div>
+          <hr>
+          <table>
+            <thead><tr><th>Curso</th><th>Duração</th><th>Alunos</th><th>Status</th></tr></thead>
+            <tbody id="tbody-cursos">
+              <tr><td colspan="4" class="vazio">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MATRÍCULAS -->
+      <div id="pagina-matriculas" class="pagina">
+        <div class="titulo-pagina">Sistema › <span>Matrículas</span></div>
+        <div class="painel">
+          <div class="painel-header">
+            <h3>Matrículas Recentes</h3>
+            <button class="btn-primario-sm" onclick="window.location.href='matricula.html'">+ Nova Matrícula</button>
+          </div>
+          <hr>
+          <table>
+            <thead><tr><th>Aluno</th><th>Curso</th><th>Data</th><th>Status</th><th>Ação</th></tr></thead>
+            <tbody id="tbody-matriculas">
+              <tr><td colspan="5" class="vazio">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ATENDIMENTO -->
+      <div id="pagina-atendimento" class="pagina">
+        <div class="titulo-pagina">Sistema › <span>Módulo de Atendimento</span></div>
+        <div class="atend-grid">
+          <div class="painel">
+            <div class="painel-header"><h3>Agendamento</h3></div>
+            <hr>
+            <div class="form-group">
+              <label>Aluno</label>
+              <select id="ag-aluno">
+                <option value="">Selecione...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Data</label>
+              <input type="date" id="ag-data">
+            </div>
+            <div class="form-group">
+              <label>Hora</label>
+              <input type="time" id="ag-hora">
+            </div>
+            <button class="btn-azul" onclick="agendar()">Agendar</button>
+            <p id="msg-agendar"></p>
+          </div>
+
+          <div class="painel">
+            <div class="painel-header"><h3>Simulação de Mensagem</h3></div>
+            <hr>
+            <div class="form-group">
+              <label>Destinatário</label>
+              <select id="msg-dest">
+                <option value="">Selecione...</option>
+                <option value="todos">Todos os Alunos</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Mensagem</label>
+              <textarea id="msg-texto" placeholder="Digite a mensagem..."></textarea>
+            </div>
+            <button class="btn-cinza" onclick="simularEnvio()">Simular Envio</button>
+            <p id="msg-retorno"></p>
+            <div style="margin-top: 16px;">
+              <strong style="font-size: 13px; color: #0d1b4b;">Atendimentos</strong>
+              <table style="margin-top: 8px;">
+                <thead><tr><th>Aluno</th><th>Assunto</th><th>Status</th><th>Atendente</th><th>Ação</th></tr></thead>
+                <tbody id="tbody-atendimentos">
+                  <tr><td colspan="5" class="vazio">Carregando...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
