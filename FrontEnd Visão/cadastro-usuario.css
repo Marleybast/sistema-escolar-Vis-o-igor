@@ -1,0 +1,71 @@
+/* ── ajustes especificos da tela de cadastro ── */
+
+.card-cadastro {
+  max-width: 480px;
+}
+
+/* duas colunas para senha e confirmar senha */
+.linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* select de perfil usando o mesmo visual do input */
+.input-wrap select {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  border: 1px solid var(--cinza-borda);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  color: #1e293b;
+  background: var(--cinza-bg);
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.input-wrap select:focus {
+  outline: none;
+  border-color: var(--azul-medio);
+  background: var(--branco);
+  box-shadow: 0 0 0 3px rgba(26,52,148,0.08);
+}
+
+/* seta customizada para o select */
+.input-wrap:has(select)::after {
+  content: '▾';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cinza-texto);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* link para voltar ao login */
+.login-alt {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--cinza-texto);
+}
+
+.login-alt a {
+  color: var(--azul-medio);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.login-alt a:hover { color: var(--azul); }
+
+/* responsivo: empilha senha e confirmar senha em telas pequenas */
+@media (max-width: 540px) {
+  .linha-dupla {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

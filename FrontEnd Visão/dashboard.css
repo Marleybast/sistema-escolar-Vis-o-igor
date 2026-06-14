@@ -117,6 +117,30 @@ body {
 
 .avatar:hover { transform: scale(1.05); }
 
+/* ── BOTÃO SAIR ── */
+.btn-sair {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vermelho);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-sair:hover {
+  background: var(--vermelho-bg);
+  border-color: #fca5a5;
+}
+
+.sair-icon { font-size: 13px; }
+
 /* ── LAYOUT ── */
 .layout {
   display: flex;

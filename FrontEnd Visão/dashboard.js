@@ -463,6 +463,13 @@ function simularEnvio() {
     });
 }
 
+// ----- LOGOUT -----
+function sair() {
+  if (!confirm("Deseja realmente sair do sistema?")) return;
+  sessionStorage.removeItem("usuarioLogado");
+  window.location.href = "login.html";
+}
+
 // ----- USUARIO LOGADO -----
 function carregarUsuarioLogado() {
   var dados = sessionStorage.getItem("usuarioLogado");

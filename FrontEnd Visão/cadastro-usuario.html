@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colégio Visão — Criar Conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="cadastro-usuario.css">
+</head>
+<body>
+
+  <div class="bg-esquerda">
+    <div class="bg-conteudo">
+      <img src="logo.png" alt="Logo Colégio Visão" class="bg-logo">
+      <h1 class="bg-titulo">Colégio Visão</h1>
+      <p class="bg-subtitulo">Sistema de Gestão Escolar</p>
+      <div class="bg-detalhe"></div>
+      <ul class="bg-lista">
+        <li>✓ Gestão de alunos e matrículas</li>
+        <li>✓ Controle de cursos e turmas</li>
+        <li>✓ Módulo de atendimento integrado</li>
+        <li>✓ Agendamentos e mensagens</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-login">
+    <div class="card-login card-cadastro">
+
+      <div class="card-header">
+        <h2>Criar conta</h2>
+        <p>Preencha os dados para se matricular no sistema</p>
+      </div>
+
+      <div class="form-group">
+        <label for="nome">Nome completo</label>
+        <div class="input-wrap">
+          <span class="input-icon">👤</span>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <div class="input-wrap">
+          <span class="input-icon">✉️</span>
+          <input type="email" id="email" placeholder="Digite seu e-mail" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="linha-dupla">
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="senha" placeholder="Crie uma senha">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="confirmarSenha" placeholder="Repita a senha">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="perfil">Você é</label>
+        <div class="input-wrap">
+          <span class="input-icon">🎓</span>
+          <select id="perfil">
+            <option value="aluno">Aluno</option>
+            <option value="responsavel">Responsável por aluno</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-entrar" onclick="cadastrarUsuario()">Criar conta</button>
+
+      <p id="mensagem"></p>
+
+      <div class="login-alt">
+        Já tem uma conta? <a href="login.html">Fazer login</a>
+      </div>
+
+      <div class="card-footer">
+        © 2026 Colégio Visão — Todos os direitos reservados
+      </div>
+
+    </div>
+  </div>
+
+  <script src="cadastro-usuario.js"></script>
+</body>
+</html>
